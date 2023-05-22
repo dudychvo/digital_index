@@ -29,7 +29,17 @@
         </a>
         <ul class="nav">
           <li class="nav-link">
-            <a href="./all-products.html">All products</a>
+            <div class="dropdown">
+              <button class="dropbtn">
+                <a href="./all-products.html">All products</a>
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="./phones.html">Phones</a>
+                <a href="./accessories.html">Accessories</a>
+                <a href="./services.html">Services</a>
+              </div>
+            </div>
           </li>
           <li class="nav-link">
             <a href="./about-us.html">About us</a>
@@ -54,8 +64,12 @@
     <div class="swiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <div class="over-slide">
-            <p>123</p>
+          <div class="over-slide slide-one">
+            <h2 class="over-slide-phone-title">iPhone 14 Pro Max</h2>
+            <p class="over-slide-phone-info">
+              <span class="over-slide-old-price">£1249</span> / £1149
+            </p>
+            <a href="#" class="over-slide-button">Buy now!</a>
           </div>
           <img
             src="./images/iphone.jpg"
@@ -64,6 +78,13 @@
           />
         </div>
         <div class="swiper-slide">
+          <div class="over-slide slide-two">
+            <h2 class="over-slide-phone-title">Samsung S23 Ultra</h2>
+            <p class="over-slide-phone-info">
+              <span class="over-slide-old-price">£1349</span> / £1249
+            </p>
+            <a href="#" class="over-slide-button">Buy now!</a>
+          </div>
           <img
             src="./images/samsung.jpg"
             class="swiper-slide-image"
@@ -71,6 +92,13 @@
           />
         </div>
         <div class="swiper-slide">
+          <div class="over-slide slide-three">
+            <h2 class="over-slide-phone-title">Huawei P50 Pro</h2>
+            <p class="over-slide-phone-info">
+              <span class="over-slide-old-price">£1549</span> / £1349
+            </p>
+            <a href="#" class="over-slide-button">Buy now!</a>
+          </div>
           <img
             src="./images/huawei.jpg"
             alt="Huawei P50 Pro "
@@ -88,7 +116,7 @@
           <li class="nav-link"><a href="/">Home page</a></li>
         </ul>
         <p>Copyright © 2023 Digital Index Co. All rights reserved.</p>
-        <p>UK - United Kingdom</p>
+        <p>United Kingdon - English</p>
         <p>22/05/2023 - 12:00</p>
         <p></p>
       </div>
