@@ -98,7 +98,11 @@ footer {
   font-size: 18px;
   padding: 10px 20px;
   background-color: #0d3934;
-  height: 150px;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 body {
