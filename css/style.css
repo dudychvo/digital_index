@@ -250,15 +250,3 @@ footer {
   width: 100%;
   justify-content: space-between;
 }
-
-.test {
-  width: 100vw;
-  height: 100vh;
-  background: red;
-}
-
-.test2 {
-  width: 100vw;
-  height: 100vh;
-  background: blue;
-}
