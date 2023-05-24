@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="shortcut icon" href="./images/icon.svg" />
+    <link rel="shortcut icon" href="./images/icon.svg" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,18 +15,29 @@
     <title>Digital Index - Contact us</title>
   </head>
   <body>
-<header>
+    <header>
       <div class="container">
         <a href="./index.html">
           <img
             src="./images/company-name.svg"
             alt="Logo of Digital Index"
             width="120px"
+            class="zoom"
           />
         </a>
         <ul class="nav">
           <li class="nav-link">
-            <a href="./all-products.html">All products</a>
+            <div class="dropdown">
+              <button class="dropbtn">
+                <a href="./all-products.html">All products</a>
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="./phones.html">Phones</a>
+                <a href="./accessories.html">Accessories</a>
+                <a href="./services.html">Services</a>
+              </div>
+            </div>
           </li>
           <li class="nav-link">
             <a href="./about-us.html">About us</a>
@@ -39,7 +50,7 @@
             >
           </li>
         </ul>
-        <a href="./cart.html">
+        <a href="./cart.html" class="zoom">
           <img
             src="./images/shopping-cart.svg"
             alt="Cart"
@@ -48,5 +59,111 @@
         /></a>
       </div>
     </header>
+        <footer>
+      <div class="footer-container">
+        <div class="footer-nav-container">
+          <div class="footer-nav">
+            <h2>Explore</h2>
+            <ul>
+              <li class="footer-nav-link">
+                <a href="./index.html">Home page</a>
+              </li>
+              <li class="footer-nav-link">
+                <a href="./all-products.html">All products</a>
+              </li>
+              <li class="footer-nav-link">
+                <a href="./phones.html">Phones</a>
+              </li>
+            </ul>
+            <ul>
+              <li class="footer-nav-link">
+                <a href="./accessories.html">Accessories</a>
+              </li>
+              <li class="footer-nav-link">
+                <a href="./services.html">Services</a>
+              </li>
+              <li class="footer-nav-link">
+                <a href="./about-us.html">About us</a>
+              </li>
+            </ul>
+            <ul>
+              <li class="footer-nav-link">
+                <a href="./contact-us.html">Contact us</a>
+              </li>
+              <li class="footer-nav-link">
+                <a href="./feedback.html">Feedback</a>
+              </li>
+              <li class="footer-nav-link"><a href="./cart.html">Cart</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact-info">
+            <h2>Contact</h2>
+            <ul>
+              <li><a href="tel:+447402999060">+447402999060</a></li>
+              <li>
+                <a href="mailto:dudychvo@gmail.com">dudychvo@gmail.com</a>
+              </li>
+              <li>
+                <p class="footer-address">67 Harringay Road, N15 3HU</p>
+              </li>
+            </ul>
+            <ul class="footer-link-list">
+              <li>
+                <a href="https://github.com/dudychvo" target="_blank"
+                  ><img
+                    src="./images/github.svg"
+                    alt="GitHub"
+                    class="footer-contact-media zoom"
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/skeerrex/?igshid=MjEwN2lyYWYwYw%3D%3D"
+                  target="_blank"
+                  ><img
+                    src="./images/instagram.svg"
+                    alt="Instagram"
+                    class="footer-contact-media zoom"
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="https://api.whatsapp.com/send/?phone=%2B447402999060&text&type=phone_number&app_absent=0"
+                  target="_blank"
+                  ><img
+                    src="./images/whatsapp.svg"
+                    alt="WhatsApp"
+                    class="footer-contact-media zoom"
+                /></a>
+              </li>
+              <li>
+                <a
+                  href="https://m.facebook.com/p/Володимир-Дудич-100020832591394/?wtsid=rdr_0c1TlIacpy1ZJ4xuU&_rdr Facebook (https://m.facebook.com/p/%D0%92%D0%BE%D0%BB%D0%BE%D0%B4%D0%B8%D0%BC%D0%B8%D1%80-%D0%94%D1%83%D0%B4%D0%B8%D1%87-100020832591394/?wtsid=rdr_0c1TlIacpy1ZJ4xuU&_rdr) Log in or sign up to view See posts, photos and more on Facebook."
+                  target="_blank"
+                  ><img
+                    src="./images/facebook.svg"
+                    alt="Facebook"
+                    class="footer-contact-media zoom"
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-exta">
+          <p>Copyright © 2023 Digital Index Co. All rights reserved.</p>
+          <p>United Kingdon - London</p>
+          <div>
+            <span class="footer-exta-time" id="day">day</span>,
+            <span class="footer-exta-time" id="daynum">00</span>
+            <span class="footer-exta-time" id="month">month</span>
+            <span class="footer-exta-time" id="year">0000</span>
+          </div>
+          <div class="display-time"></div>
+        </div>
+      </div>
+    </footer>
+    <script src="js/wow.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
