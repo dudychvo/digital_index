@@ -250,3 +250,50 @@ footer {
   width: 100%;
   justify-content: space-between;
 }
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.phone-container {
+  font-size: 18px;
+  display: flex;
+  padding: 2rem 0;
+}
+
+.product-button {
+  border: 3px solid #0d3934;
+  border-radius: 6px;
+  padding: 5px 55px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  transition: all 0.3s;
+  /* color: #000; */
+  background-color: #0d3934;
+  color: white;
+}
+
+.product-button:hover {
+  background-color: white;
+  color: #0d3934;
+}
+
+.product-title {
+  margin-top: 8rem;
+}
+
+.product-description {
+  margin-bottom: 4rem;
+  margin-top: 3rem;
+}
+
+.product-info {
+  margin-left: 6rem;
+}
+
+.hr {
+  border-bottom: 3px solid #0d3934;
+}
