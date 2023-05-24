@@ -391,3 +391,22 @@ footer {
   display: flex;
   flex-direction: column;
 }
+
+.contact-us-first-section {
+  width: 400px;
+}
+
+.contact-us-textarea {
+  min-width: 400px;
+  min-height: 180px;
+  margin-bottom: 16px;
+}
+
+.card {
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.card:not(:last-child) {
+  margin-bottom: 2rem;
+}
