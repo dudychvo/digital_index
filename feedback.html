@@ -4,26 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="shortcut icon" href="./images/icon.svg" />
+    <link rel="shortcut icon" href="./images/icon.svg" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
     <title>Digital Index - Feedback</title>
   </head>
- <body>
-<header>
+  <body>
+    <header>
       <div class="container">
         <a href="./index.html">
-          <img
-            src="./images/company-name.svg"
-            alt="Logo of Digital Index"
-            width="120px"
-            class="zoom"
-          />
+          <img src="./images/company-name.svg" alt="Logo of Digital Index" width="120px" class="zoom" />
         </a>
         <ul class="nav">
           <li class="nav-link">
@@ -45,21 +37,45 @@
           <li class="nav-link"><a href="./contact-us.html">Contact us</a></li>
           <li class="nav-link"><a href="./feedback.html">Feedback</a></li>
           <li class="nav-link">
-            <a href="https://stackoverflow.com/" target="_blank"
-              >Online forum</a
-            >
+            <a href="https://stackoverflow.com/" target="_blank">Online forum</a>
           </li>
         </ul>
         <a href="./cart.html" class="zoom">
-          <img
-            src="./images/shopping-cart.svg"
-            alt="Cart"
-            width="40px"
-            height="40px"
+          <img src="./images/shopping-cart.svg" alt="Cart" width="40px" height="40px"
         /></a>
       </div>
     </header>
-        <footer>
+    <main class="main center">
+      <h2 class="feedback-title">Feedback</h2>
+      <p class="feedback-slogan">We would love to hear you...</p>
+      <div class="feedback">
+        <form action="cart.html" class="feedback-form">
+          <div class="first-section">
+            <span class="input-label">Feedback Type</span>
+            <div class="radio-input-wrapper">
+              <input class="radio-input" type="radio" id="comments" name="type" value="comments" required />
+              <label class="radio-label" for="comments">Comments</label><br />
+              <input class="radio-input" type="radio" id="suggetions" name="type" value="suggetions" required />
+              <label class="radio-label" for="css">Suggetions</label><br />
+              <input class="radio-input" type="radio" id="questions" name="type" value="questions" required />
+              <label class="radio-label" for="javascript">Questions</label>
+            </div>
+            <label for="name" class="input-label">Name</label>
+            <input class="input" type="text" id="name" required />
+            <label for="surname" class="input-label">Surname</label>
+            <input class="input" type="text" id="surname" required />
+            <label for="email" class="input-label">Email</label>
+            <input class="input" type="email" id="email" required />
+          </div>
+          <div class="second-section">
+            <label class="input-label" for="textarea">Feedback description</label>
+            <textarea class="textarea" name="textarea" id="textarea" cols="30" rows="10" required></textarea>
+            <button class="product-button" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer>
       <div class="footer-container">
         <div class="footer-nav-container">
           <div class="footer-nav">
@@ -110,40 +126,26 @@
             <ul class="footer-link-list">
               <li>
                 <a href="https://github.com/dudychvo" target="_blank"
-                  ><img
-                    src="./images/github.svg"
-                    alt="GitHub"
-                    class="footer-contact-media zoom"
+                  ><img src="./images/github.svg" alt="GitHub" class="footer-contact-media zoom"
                 /></a>
               </li>
               <li>
-                <a
-                  href="https://www.instagram.com/skeerrex/?igshid=MjEwN2lyYWYwYw%3D%3D"
-                  target="_blank"
-                  ><img
-                    src="./images/instagram.svg"
-                    alt="Instagram"
-                    class="footer-contact-media zoom"
+                <a href="https://www.instagram.com/skeerrex/?igshid=MjEwN2lyYWYwYw%3D%3D" target="_blank"
+                  ><img src="./images/instagram.svg" alt="Instagram" class="footer-contact-media zoom"
                 /></a>
               </li>
               <li>
                 <a
                   href="https://api.whatsapp.com/send/?phone=%2B447402999060&text&type=phone_number&app_absent=0"
                   target="_blank"
-                  ><img
-                    src="./images/whatsapp.svg"
-                    alt="WhatsApp"
-                    class="footer-contact-media zoom"
+                  ><img src="./images/whatsapp.svg" alt="WhatsApp" class="footer-contact-media zoom"
                 /></a>
               </li>
               <li>
                 <a
                   href="https://m.facebook.com/p/Володимир-Дудич-100020832591394/?wtsid=rdr_0c1TlIacpy1ZJ4xuU&_rdr Facebook (https://m.facebook.com/p/%D0%92%D0%BE%D0%BB%D0%BE%D0%B4%D0%B8%D0%BC%D0%B8%D1%80-%D0%94%D1%83%D0%B4%D0%B8%D1%87-100020832591394/?wtsid=rdr_0c1TlIacpy1ZJ4xuU&_rdr) Log in or sign up to view See posts, photos and more on Facebook."
                   target="_blank"
-                  ><img
-                    src="./images/facebook.svg"
-                    alt="Facebook"
-                    class="footer-contact-media zoom"
+                  ><img src="./images/facebook.svg" alt="Facebook" class="footer-contact-media zoom"
                 /></a>
               </li>
             </ul>

@@ -258,6 +258,7 @@ footer {
   max-width: 1200px;
   margin: 2rem auto;
   min-height: 100%;
+  width: 100%;
 }
 
 .phone-container {
@@ -326,4 +327,67 @@ footer {
 
 .about-us-list:not(:last-child) {
   margin-bottom: 10px;
+}
+
+.product-header {
+  font-size: 36px;
+  margin: 0;
+  text-align: center;
+}
+
+.feedback {
+  text-align: start;
+}
+
+.feedback-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.feedback-title {
+  font-size: 36px;
+}
+
+.feedback-slogan {
+  font-size: 24px;
+}
+
+.radio-input-wrapper {
+  display: flex;
+}
+
+.radio-input {
+  margin: 0;
+}
+
+.radio-label {
+  margin: 0 10px;
+}
+
+.input-label {
+  display: block;
+  margin-top: 38px;
+  margin-bottom: 8px;
+}
+
+.input {
+  padding: 10px 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.textarea {
+  min-width: 600px;
+  min-height: 260px;
+  margin-bottom: 16px;
+}
+
+.first-section {
+  width: 500px;
+}
+
+.second-section {
+  display: flex;
+  flex-direction: column;
 }
