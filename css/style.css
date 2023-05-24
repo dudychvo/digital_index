@@ -3,7 +3,7 @@ body {
   padding: 0;
   scroll-behavior: smooth;
   font-family: Roboto;
-  min-height: 100vh; 
+  min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
 }
@@ -256,8 +256,8 @@ footer {
 
 .main {
   max-width: 1200px;
-  margin: 0 auto;
-  min-height:100%;
+  margin: 2rem auto;
+  min-height: 100%;
 }
 
 .phone-container {
@@ -300,4 +300,30 @@ footer {
 
 .hr {
   border-bottom: 3px solid #0d3934;
+}
+
+.center {
+  text-align: center;
+}
+
+.about-us {
+  display: flex;
+  margin-top: 4rem;
+  text-align: start;
+}
+
+.about-us-title {
+  font-size: 36px;
+}
+
+.about-us-slogan {
+  font-size: 24px;
+}
+
+.about-us-info {
+  margin-left: 6rem;
+}
+
+.about-us-list:not(:last-child) {
+  margin-bottom: 10px;
 }
