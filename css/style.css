@@ -3,6 +3,9 @@ body {
   padding: 0;
   scroll-behavior: smooth;
   font-family: Roboto;
+  min-height: 100vh; 
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
 header {
@@ -254,6 +257,7 @@ footer {
 .main {
   max-width: 1200px;
   margin: 0 auto;
+  min-height:100%;
 }
 
 .phone-container {
