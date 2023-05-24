@@ -393,11 +393,16 @@ footer {
 }
 
 .contact-us-first-section {
-  width: 400px;
+  width: 350px;
+}
+
+.contact-us-second-section {
+  display: flex;
+  flex-direction: column;
 }
 
 .contact-us-textarea {
-  min-width: 400px;
+  min-width: 350px;
   min-height: 180px;
   margin-bottom: 16px;
 }
