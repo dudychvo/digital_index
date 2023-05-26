@@ -45,15 +45,7 @@ function updateDate() {
     "November",
     "December",
   ];
-  const dayWeek = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
+  const dayWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   const IDCollection = ["day", "daynum", "month", "year"];
   const val = [dayWeek[dayName], dayNum, months[month], year];
   for (let i = 0; i < IDCollection.length; i++) {
@@ -62,3 +54,64 @@ function updateDate() {
 }
 
 updateDate();
+
+// Cart
+
+let count = 0;
+let sum = 0;
+let cart = {};
+
+if (localStorage.getItem("count")) {
+  count = parseInt(localStorage.getItem("count"));
+}
+
+if (localStorage.getItem("sum")) {
+  sum = parseInt(localStorage.getItem("sum"));
+}
+
+if (localStorage.getItem("cart")) {
+  cart = JSON.parse(localStorage.getItem("cart"));
+}
+
+let btns = document.querySelectorAll(".main button");
+
+for (let i = 0; i < btns.length; i++) {
+  let btn = btns[i];
+  btn.addEventListener("click", add);
+}
+
+function add(event) {
+  let price = Number(event.target.dataset.price);
+  let title = event.target.dataset.title;
+  let image = event.target.dataset.image;
+  let id = event.target.dataset.id;
+
+  if (id in cart) {
+    cart[id].qty++;
+  } else {
+    let cartItem = {
+      title: title,
+      price: price,
+      image: image,
+      qty: 1,
+    };
+    cart[id] = cartItem;
+  }
+
+  count++;
+  sum += price;
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function updateCart() {
+  document.getElementById("sum").textContent = sum;
+  document.getElementById("count").textContent = count;
+  localStorage.setItem("sum", sum);
+  localStorage.setItem("count", count);
+}
+
+let carts = {};
+if (localStorage.getItem("cart")) {
+    carts = JSON.parse(localStorage.getItem("cart"));
+}
