@@ -59,6 +59,113 @@
         /></a>
       </div>
     </header>
+    <main class="main">
+      <h2 class="product-header">Services</h2>
+      <div class="phone-container">
+        <div class="product-image">
+          <img src="./images/apple_care+.png" alt="Apple Care+" />
+        </div>
+        <div class="product-info">
+          <h2 class="product-title">Apple Care+</h2>
+          <p class="product-spec">
+            Apple Care+ for 1 year
+            <b class="brake-bold-line"> | </b> Price: £219
+          </p>
+          <p class="product-description">
+            AppleCare+ is an extended warranty and support program offered by
+            Apple for their devices. It provides additional coverage and
+            protection beyond the standard warranty. With AppleCare+, you
+            receive priority access to Apple's customer support, including
+            technical assistance and troubleshooting. It also offers coverage
+            for accidental damage, such as drops or spills, subject to a
+            deductible fee. AppleCare+ provides peace of mind by ensuring that
+            your Apple device is protected and that you can receive timely
+            support and repairs if needed.
+          </p>
+          <button
+            class="product-button"
+            data-image="./images/apple_care+.png"
+            data-id="19"
+            data-price="219"
+            data-title="Apple Care+"
+            onclick="add()"
+          >
+            Add to cart
+          </button>
+        </div>
+      </div>
+      <div class="hr"></div>
+      <div class="phone-container">
+        <div class="product-image">
+          <img
+            src="./images/screen_protection_putting.png"
+            alt="Applying Screen Protection"
+          />
+        </div>
+        <div class="product-info">
+          <h2 class="product-title">Screen Protection</h2>
+          <p class="product-spec">
+            Applying Screen Protection for any phone
+            <b class="brake-bold-line"> | </b> Price: £15
+          </p>
+          <p class="product-description">
+            Applying a screen protector offers additional protection for your
+            device's display. Typically made of tempered glass or film, screen
+            protectors are designed to guard against scratches, smudges, and
+            fingerprints. They feature a precise fit, ensuring full coverage and
+            compatibility with touchscreens. The application process involves
+            cleaning the screen, aligning the protector, and smoothing out any
+            air bubbles. Once applied, a screen protector maintains screen
+            clarity and touch sensitivity while adding a layer of defense
+            against daily wear and tear.
+          </p>
+          <button
+            class="product-button"
+            data-image="./images/screen_protection_putting.png"
+            data-id="20"
+            data-price="15"
+            data-title="Applying Screen Protection for any phone"
+            onclick="add()"
+          >
+            Add to cart
+          </button>
+        </div>
+      </div>
+      <div class="phone-container">
+        <div class="product-image">
+          <img src="./images/screen_repair.png" alt="Phone repair" />
+        </div>
+        <div class="product-info">
+          <h2 class="product-title">Phone repair</h2>
+          <p class="product-spec">
+            Repair of the phone's screen
+            <b class="brake-bold-line"> | </b> Price: £559
+          </p>
+          <p class="product-description">
+            AppleCare+ is an extended warranty and support program offered by
+            Apple for their devices. It provides additional coverage and
+            protection beyond the standard warranty. With AppleCare+, you
+            receive priority access to Apple's customer support, including
+            technical assistance and troubleshooting. It also offers coverage
+            for accidental damage, such as drops or spills, subject to a
+            deductible fee. AppleCare+ provides peace of mind by ensuring that
+            your Apple device is protected and that you can receive timely
+            support and repairs if needed.
+          </p>
+          <button
+            class="product-button"
+            data-image="./images/screen_repair.png"
+            data-id="21"
+            data-price="559"
+            data-title="Phone repair"
+            onclick="add()"
+          >
+            Add to cart
+          </button>
+        </div>
+      </div>
+      <div class="hr"></div>
+    </main>
     <footer>
       <div class="footer-container">
         <div class="footer-nav-container">
@@ -163,7 +270,29 @@
       </div>
     </footer>
     <script src="js/wow.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
+
+    <script>
+      add = () => {
+        const Toast = Swal.mixin({
+          toast: true,
+          position: "top",
+          showConfirmButton: false,
+          timer: 1500,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener("mouseenter", Swal.stopTimer);
+            toast.addEventListener("mouseleave", Swal.resumeTimer);
+          },
+        });
+
+        Toast.fire({
+          icon: "success",
+          title: "Item has been added to the cart",
+        });
+      };
+    </script>
   </body>
 </html>
