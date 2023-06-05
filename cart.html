@@ -72,8 +72,22 @@
         <tbody id="tbody"></tbody>
       </table>
       <div id="sum"></div>
-      <button class="product-button" onclick="buy()">Buy</button>
-      <button class="product-button" onclick="clearCart()">Clear</button>
+      <form>
+        <div class="cart-form">
+          <label for="name" class="cart-input-label">Name</label>
+          <input class="cart-input" type="text" id="name" required />
+          <label for="surname" class="cart-input-label">Surname</label>
+          <input class="cart-input" type="text" id="surname" required />
+          <label for="postcode" class="cart-input-label">Postcode</label>
+          <input class="cart-input" type="text" id="postcode" required />
+        </div>
+        <div class="cart-buttons">
+          <button class="product-button">Buy</button>
+          <button class="product-button" type="button" onclick="clearCart()">
+            Clear
+          </button>
+        </div>
+      </form>
     </main>
     <footer>
       <div class="footer-container">
@@ -91,7 +105,7 @@
                 <a href="./phones.html">Phones</a>
               </li>
             </ul>
-            <ul  class="footer-list">
+            <ul class="footer-list">
               <li class="footer-nav-link">
                 <a href="./accessories.html">Accessories</a>
               </li>
@@ -102,7 +116,7 @@
                 <a href="./about-us.html">About us</a>
               </li>
             </ul>
-            <ul  class="footer-list">
+            <ul class="footer-list">
               <li class="footer-nav-link">
                 <a href="./contact-us.html">Contact us</a>
               </li>
@@ -166,7 +180,9 @@
           </div>
         </div>
         <div class="footer-exta">
-          <p class="copyright" >Copyright © 2023 Digital Index Co. All rights reserved.</p>
+          <p class="copyright">
+            Copyright © 2023 Digital Index Co. All rights reserved.
+          </p>
           <p>United Kingdon - London</p>
           <div>
             <span class="footer-exta-time" id="day">day</span>,
@@ -185,14 +201,44 @@
     <script src="js/main.js"></script>
 
     <script>
-      const buy = () => {
-        Swal.fire("Thanks!", "Your order has been submitted!", "success").then(
-          () => {
+      const form = document.querySelector("form");
+      const total = document
+        .getElementById("sum")
+        .querySelector("p")
+        .innerHTML.slice(8);
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const postcode = document.getElementById("postcode");
+        const regex = new RegExp(
+          "^([A-Za-z][A-Ha-hJ-Yj-y]?[0-9][A-Za-z0-9]? ?[0-9][A-Za-z]{2}|[Gg][Ii][Rr] ?0[Aa]{2})$"
+        ).test(postcode.value.trim());
+        if (total > 0 && regex) {
+          Swal.fire(
+            "Thanks!",
+            "Your order has been submitted!",
+            "success"
+          ).then(() => {
             localStorage.clear();
             window.location.reload();
-          }
-        );
-      };
+          });
+        } else if (!regex) {
+          Swal.fire({
+            icon: "error",
+            title: "Oops... Your postcode could be entered incorrect",
+            text: " Plese check if it is correct",
+          });
+        } else {
+          Swal.fire({
+            title: "Your cart is currently empty!",
+            icon: "info",
+            html: "Please add any product",
+            showCloseButton: true,
+            focusConfirm: false,
+            confirmButtonText: "OK",
+          });
+        }
+      });
 
       const clearCart = () => {
         Swal.fire({
@@ -205,14 +251,12 @@
           confirmButtonText: "Yes, clear it!",
         }).then((result) => {
           if (result.isConfirmed) {
-            Swal.fire(
-              "Cleared!",
-              "Your cart has been cleared",
-              "success"
-            ).then(() => {
-              localStorage.clear();
-              window.location.reload();
-            });
+            Swal.fire("Cleared!", "Your cart has been cleared", "success").then(
+              () => {
+                localStorage.clear();
+                window.location.reload();
+              }
+            );
           }
         });
       };
