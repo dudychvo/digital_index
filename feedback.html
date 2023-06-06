@@ -63,10 +63,10 @@
       <h2 class="feedback-title">Feedback</h2>
       <p class="feedback-slogan">We would love to hear you...</p>
       <div class="feedback">
-        <form action="cart.html" class="feedback-form">
+        <form class="feedback-form">
           <div class="first-section">
             <span class="input-label">Feedback Type</span>
-            <div class="radio-input-wrapper">
+            <div id="select" class="radio-input-wrapper">
               <input
                 class="radio-input"
                 type="radio"
@@ -224,6 +224,19 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      if (submittedForm) {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Your work has been saved",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+    </script>
+
     <script src="js/wow.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>

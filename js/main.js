@@ -45,7 +45,15 @@ function updateDate() {
     "November",
     "December",
   ];
-  const dayWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const dayWeek = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
   const IDCollection = ["day", "daynum", "month", "year"];
   const val = [dayWeek[dayName], dayNum, months[month], year];
   for (let i = 0; i < IDCollection.length; i++) {
@@ -113,5 +121,82 @@ function updateCart() {
 
 let carts = {};
 if (localStorage.getItem("cart")) {
-    carts = JSON.parse(localStorage.getItem("cart"));
+  carts = JSON.parse(localStorage.getItem("cart"));
 }
+
+let obj = {};
+let type;
+let textarea;
+let submittedForm;
+
+const form = document.querySelector("form");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const formData = new FormData(form);
+  for (const pair of formData.entries()) {
+    console.log(pair);
+    if (pair[0] === "email") {
+      email = pair[1];
+    }
+    if (pair[0] === "type") {
+      type = pair[1];
+    }
+    if (pair[0] === "textarea") {
+      textarea = pair[1];
+    }
+    obj = {
+      ...obj,
+      type: type,
+      name: document.getElementById("name").value,
+      surname: document.getElementById("surname").value,
+      email: document.getElementById("email").value,
+      textarea: textarea,
+    };
+  }
+
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  var requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    body: JSON.stringify(obj),
+    redirect: "follow",
+  };
+
+  function sumbitAction() {
+    let selectField = document.getElementById("select").value;
+    let nameField = document.getElementById("name").value;
+    let surnameField = document.getElementById("surname").value;
+    let emailField = document.getElementById("email").value;
+    let textareaField = document.getElementById("textarea").value;
+    // if ((nameField != "") & (emailField != "")) {
+    //   document.getElementById("name").value = "";
+    //   document.getElementById("email").value = "";
+    // }
+
+    console.log(
+      selectField,
+      nameField,
+      surnameField,
+      emailField,
+      textareaField
+    );
+  }
+
+  let emailText = document.getElementById("email").value;
+  let pattern =
+    /^([A-Z|a-z|0-9](\.|_){0,1})+[A-Z|a-z|0-9]\@([A-Z|a-z|0-9])+((\.){0,1}[A-Z|a-z|0-9]){2}\.[a-z]{2,3}$/gm;
+  let result = pattern.test(emailText);
+
+  if (result) {
+    fetch(
+      "https://646e973009ff19b1208618e6.mockapi.io/feedback",
+      requestOptions
+    )
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .then(() => sumbitAction())
+      .then(() => (submittedForm = true));
+  }
+});
