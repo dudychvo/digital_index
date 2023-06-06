@@ -164,21 +164,14 @@ form.addEventListener("submit", (e) => {
     redirect: "follow",
   };
 
-  function sumbitAction() {
-    let selectField = document.getElementById("select").value;
-    let nameField = document.getElementById("name").value;
-    let surnameField = document.getElementById("surname").value;
-    let emailField = document.getElementById("email").value;
-    let textareaField = document.getElementById("textarea").value;
+  var my_awesome_script = document.createElement("script");
 
-    console.log(
-      selectField,
-      nameField,
-      surnameField,
-      emailField,
-      textareaField
-    );
-  }
+  my_awesome_script.setAttribute(
+    "src",
+    "https://cdn.jsdelivr.net/npm/sweetalert2@11"
+  );
+
+  document.head.appendChild(my_awesome_script);
 
   let emailText = document.getElementById("email").value;
   let pattern =
@@ -191,8 +184,15 @@ form.addEventListener("submit", (e) => {
       requestOptions
     )
       .then((response) => response.text())
-      .then((result) => console.log(result))
-      .then(() => sumbitAction())
-      .then(() => (submittedForm = true));
+      .then(() =>
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Your work has been saved",
+          showConfirmButton: false,
+          timer: 1500,
+        })
+      )
+      .then(() => window.location.reload());
   }
 });
