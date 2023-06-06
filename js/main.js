@@ -170,10 +170,6 @@ form.addEventListener("submit", (e) => {
     let surnameField = document.getElementById("surname").value;
     let emailField = document.getElementById("email").value;
     let textareaField = document.getElementById("textarea").value;
-    // if ((nameField != "") & (emailField != "")) {
-    //   document.getElementById("name").value = "";
-    //   document.getElementById("email").value = "";
-    // }
 
     console.log(
       selectField,

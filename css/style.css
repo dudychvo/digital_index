@@ -545,7 +545,7 @@ tr:nth-child(even) {
   }
 
   .swiper {
-    display: none;
+    display: none !important;
   }
 }
 

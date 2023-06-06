@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="shortcut icon" href="./images/icon.svg" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/style.css" />
@@ -64,13 +65,16 @@
     </header>
     <main class="main">
       <video
-        id="myVideo"
-        src="./videos/presentation.mp4"
+        id="autoplay"
         autoplay
         loop
         width="1200px"
+        muted="muted"
         height="700px"
-      ></video>
+      >
+        <source src="./videos/presentation.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       <div class="swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
@@ -230,5 +234,12 @@
     <script src="js/wow.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+      window.onload = function () {
+        setTimeout(function () {
+          document.getElementById("autoplay").play();
+        }, 500);
+      };
+    </script>
   </body>
 </html>
