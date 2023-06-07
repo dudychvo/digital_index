@@ -186,8 +186,6 @@ const contactForm = document.getElementById("contact-us-form");
 
 contactForm && contactForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  console.log(e);
-  alert('123');
   const formData = new FormData(contactForm);
   for (const pair of formData.entries()) {
     console.log(pair);
