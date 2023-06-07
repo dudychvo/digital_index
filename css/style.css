@@ -373,6 +373,11 @@ footer {
   justify-content: space-between;
 }
 
+.contact-us-form {
+  display: flex;
+  justify-content: space-between;
+}
+
 .feedback-title {
   font-size: 36px;
 }
@@ -500,6 +505,11 @@ tr:nth-child(even) {
   margin-bottom: 2rem;
 }
 
+video {
+  width: 100%;
+  height: auto;
+}
+
 @media only screen and (max-width: 1200px) {
   .about-us-image {
     padding: 0 2rem;
@@ -527,6 +537,12 @@ tr:nth-child(even) {
     padding: 0 2rem;
   }
 
+  .contact-us-form {
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 0 2rem;
+  }
+
   .contact-us-first-section {
     margin: 0 auto;
   }
@@ -536,8 +552,9 @@ tr:nth-child(even) {
   }
 
   .contact-us-textarea {
-    min-width: 0;
-    width: auto;
+    width: 100px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
   }
 
   .card {
@@ -579,6 +596,15 @@ tr:nth-child(even) {
 }
 
 @media only screen and (max-width: 768px) {
+  .product-image img {
+    max-height: 250px;
+    height: auto;
+  }
+
+  .first-section {
+    width: 100%;
+  }
+
   .footer-nav-container {
     flex-direction: column;
     align-items: center;
@@ -587,6 +613,7 @@ tr:nth-child(even) {
   .footer-nav {
     justify-content: center;
     text-align: center;
+    flex-direction: column
   }
 
   .footer-nav-link {

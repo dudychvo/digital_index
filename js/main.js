@@ -45,15 +45,7 @@ function updateDate() {
     "November",
     "December",
   ];
-  const dayWeek = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
+  const dayWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   const IDCollection = ["day", "daynum", "month", "year"];
   const val = [dayWeek[dayName], dayNum, months[month], year];
   for (let i = 0; i < IDCollection.length; i++) {
@@ -129,8 +121,8 @@ let type;
 let textarea;
 let submittedForm;
 
-const form = document.querySelector("form");
-form.addEventListener("submit", (e) => {
+const form = document.querySelector(".feedback-form");
+form && form.addEventListener("submit", (e) => {
   e.preventDefault();
   const formData = new FormData(form);
   for (const pair of formData.entries()) {
@@ -166,23 +158,76 @@ form.addEventListener("submit", (e) => {
 
   var my_awesome_script = document.createElement("script");
 
-  my_awesome_script.setAttribute(
-    "src",
-    "https://cdn.jsdelivr.net/npm/sweetalert2@11"
-  );
+  my_awesome_script.setAttribute("src", "https://cdn.jsdelivr.net/npm/sweetalert2@11");
 
   document.head.appendChild(my_awesome_script);
 
   let emailText = document.getElementById("email").value;
-  let pattern =
-    /^([A-Z|a-z|0-9](\.|_){0,1})+[A-Z|a-z|0-9]\@([A-Z|a-z|0-9])+((\.){0,1}[A-Z|a-z|0-9]){2}\.[a-z]{2,3}$/gm;
+  let pattern = /^([A-Z|a-z|0-9](\.|_){0,1})+[A-Z|a-z|0-9]\@([A-Z|a-z|0-9])+((\.){0,1}[A-Z|a-z|0-9]){2}\.[a-z]{2,3}$/gm;
   let result = pattern.test(emailText);
 
   if (result) {
-    fetch(
-      "https://646e973009ff19b1208618e6.mockapi.io/feedback",
-      requestOptions
-    )
+    fetch("https://646e973009ff19b1208618e6.mockapi.io/feedback", requestOptions)
+      .then((response) => response.text())
+      .then(() =>
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Your work has been saved",
+          showConfirmButton: false,
+          timer: 1500,
+        })
+      )
+      .then(() => window.location.reload());
+  }
+});
+
+const contactForm = document.getElementById("contact-us-form");
+
+contactForm && contactForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  console.log(e);
+  alert('123');
+  const formData = new FormData(contactForm);
+  for (const pair of formData.entries()) {
+    console.log(pair);
+    if (pair[0] === "email") {
+      email = pair[1];
+    }
+    if (pair[0] === "textarea") {
+      textarea = pair[1];
+    }
+    obj = {
+      ...obj,
+      name: document.getElementById("name").value,
+      surname: document.getElementById("surname").value,
+      email: document.getElementById("email").value,
+      textarea: textarea,
+    };
+  }
+
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+
+  var requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    body: JSON.stringify(obj),
+    redirect: "follow",
+  };
+
+  var my_awesome_script = document.createElement("script");
+
+  my_awesome_script.setAttribute("src", "https://cdn.jsdelivr.net/npm/sweetalert2@11");
+
+  document.head.appendChild(my_awesome_script);
+
+  let emailText = document.getElementById("email").value;
+  let pattern = /^([A-Z|a-z|0-9](\.|_){0,1})+[A-Z|a-z|0-9]\@([A-Z|a-z|0-9])+((\.){0,1}[A-Z|a-z|0-9]){2}\.[a-z]{2,3}$/gm;
+  let result = pattern.test(emailText);
+
+  if (result) {
+    fetch("https://646e973009ff19b1208618e6.mockapi.io/contact_us", requestOptions)
       .then((response) => response.text())
       .then(() =>
         Swal.fire({
