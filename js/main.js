@@ -173,7 +173,7 @@ form && form.addEventListener("submit", (e) => {
         Swal.fire({
           position: "top-end",
           icon: "success",
-          title: "Your work has been saved",
+          title: "Your form has been submitted",
           showConfirmButton: false,
           timer: 1500,
         })
@@ -231,7 +231,7 @@ contactForm && contactForm.addEventListener("submit", (e) => {
         Swal.fire({
           position: "top-end",
           icon: "success",
-          title: "Your work has been saved",
+          title: "Your form has been submitted",
           showConfirmButton: false,
           timer: 1500,
         })
